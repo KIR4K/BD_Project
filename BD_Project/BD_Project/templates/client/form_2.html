@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block  title%} Оформить кредит {%endblock%}
+{%block content %}
+
+<h1>Заполните форму для получения кредита</h1>
+
+    <form action="{% url 'form_2' client_id=client.id %}" method="POST">
+        {%csrf_token    %}
+
+        <label for="birth_date">Дата рождения:</label>
+        <input type="date" id="birth_date" name="birth_date" required><br><br>
+
+        <label for="passport_series">Серия паспорта:</label>
+        <input type="text" id="passport_series" name="passport_series" required><br><br>
+
+        <label for="passport_number">Номер паспорта:</label>
+        <input type="text" id="passport_number" name="passport_number" required><br><br>
+
+        <label for="address">Адрес:</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <button type="submit">Шаг 3</button>
+    </form>
+
+{%endblock%}

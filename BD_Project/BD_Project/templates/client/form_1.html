@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block  title%} Оформить кредит {%endblock%}
+{%block content %}
+
+<h1>Заполните форму для получения кредита</h1>
+
+    <form action="/get_loan/form_1/" method="POST">
+        {%csrf_token    %}
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+
+        <label for="last_name">Фамилия:</label>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+
+        <label for="patronymic">Отчество:</label>
+        <input type="text" id="patronymic" name="patronymic"><br><br>
+
+
+
+        <button type="submit">Шаг 2</button>
+    </form>
+
+{%endblock%}
